@@ -14,7 +14,7 @@ The following will be for my ICT Web Development Final Project. The goal of this
 
 The next update will come following my first push to GitHub. My primary objective is to develop all the navigation bars, and get each page to connect to the others (I want to avoid the white screen of death this time). I am not sure if over documenting is a thing lol, but lets get it. 
 ##01 update before Github push##
-Went through and updated the folder structure to ensure that all pages are organized separately. Each page has been categorized and placed into its respective folder, making it easier to navigate and find specific documents. It should make adding the navigation bar easier after I connect this to GitHub for the first push.
+Went through and updated the folder structure to ensure that all pages are organized separately. Each page has been categorized and placed into its respective folder, making it easier to navigate and find specific documents. It should make adding the navigation bar easier after I connect this to GitHub for the first push. After that the majority of the project progress will be updated through commits. 
 
 
 
