@@ -7,3 +7,19 @@ body {
     background-color: #12512f;
     color: white
 }
+/* eco-innovation-table styles */
+.eco-innovation-table caption {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #969796f1;
+    color: rgb(13, 1, 1);
+}
+.eco-innovation-table {
+    border-collapse: collapse;
+}
+.eco-innovation-table th, .eco-innovation-table td {
+    border: 1px solid #8e7070;
+    padding: 8px;
+    text-align: left;
+}
