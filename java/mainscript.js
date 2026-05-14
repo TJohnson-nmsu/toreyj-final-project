@@ -16,3 +16,23 @@ function setupNewsletterForm() {
     }
 }
 document.addEventListener('DOMContentLoaded', setupNewsletterForm);
+//Impact statistics section//
+function displayImpactStatistics() {
+    const impactStatsSection = document.getElementById('impact-stats');
+    if (impactStatsSection) {
+        const stats = [
+            { label: 'Carbon Emissions Reduced', value: '1,000,000 kg' },
+            { label: 'Trees Planted', value: '10,000' },
+            { label: 'Water Saved', value: '500,000 liters' },
+            { label: 'Energy Saved', value: '2,000,000 kWh' }
+        ];
+        stats.forEach(stat => {
+            const statElement = document.createElement('div');
+            statElement.classList.add('stat');
+            statElement.innerHTML = `<h3>${stat.value}</h3><p>${stat.label}</p>`;
+            impactStatsSection.appendChild(statElement);
+        }
+        );
+    }
+}
+
