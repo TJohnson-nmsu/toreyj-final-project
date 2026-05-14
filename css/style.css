@@ -1,0 +1,9 @@
+/**copied from the styles.css file in my previous project, modified to fit the plant theme of this companies website.**/
+/* Global Styles */
+body {
+    font-family: 'Bookman Old Style', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: darkolivegreen;
+    color: white
+}
