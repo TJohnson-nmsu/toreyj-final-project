@@ -59,7 +59,7 @@ searchInput.addEventListener('input', function() {
 );
 //Quiz functionality//
 document.addEventListener('DOMContentLoaded', function() {
-    const quizForm = document.getElementById('quiz-form');
+    const quizForm = document.getElementById('quizForm');
     quizForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let totalscore = 0;
@@ -81,5 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
             resultMessage += 'Keep learning! Your eco score indicates that there is room for growth in your sustainability knowledge. Keep watering your roots of knowledge and watch your eco-awareness bloom!';
         }
         alert(resultMessage);
+        let resultDiv = document.getElementById('quizResult');
+        if (!resultDiv) {
+            resultDiv = document.createElement('div');
+            resultDiv.id = 'quizResult';
+            resultDiv.style.background = 'rgb(255,255,255,0.8)';
+            resultDiv.style.padding = '20px';
+            resultDiv.style.marginTop = '25px';
+            resultDiv.style.borderRadius = '10px';
+            quizForm.appendChild(resultDiv);            
+        }
+        resultDiv.textContent = resultMessage;
     });
-    
+});
