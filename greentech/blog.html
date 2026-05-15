@@ -21,8 +21,87 @@
         </nav>
     </header>
     <!--Continue after the nav, push first-->
-    <main>
-        <h1 class="centered-title">The Sustainability Journal: Your Guide to a Greener Tomorrow</h1>
-    </main>
+<main>
+    <h1 class="centered-title">The Sustainability Journal: Your Guide to a Greener Tomorrow</h1>
+<!-- removed css from html page and added plant theme quiz -->  
+    <section class="plant-theme">
+        <h2>Planting the Seeds of Sustainability: A Journey into GreenTech's Innovations</h2>
+        <div class="plant-icons">
+            <img src="images/seedling.png" alt="Seedling Icon" width="100">
+            <img src="images/leaf.png" alt="Leaf Icon" width="100">
+            <img src="images/sprout.png" alt="Sprout Icon" width="100">
+        </div>
+    </section>
+    <!--Added quiz section-->
+    <section class="quiz-section">
+        <h2>How Green Are You?: Take the GreenTech Quiz</h2>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>1. What is the primary goal of GreenTech?</p>
+                        <label><input type="radio" name="q1" value="a" data-score="0"> To maximize profits</label>
+                        <label><input type="radio" name="q1" value="b" data-score="1"> To promote sustainable practices</label>
+                        <label><input type="radio" name="q1" value="c" data-score="1"> To reduce carbon emissions</label>
+                </li>
+                <li>
+                    <p>2. Which of the following is a key feature of GreenTech's products?</p>
+                        <label><input type="radio" name="q2" value="a" data-score="0"> Fracting Machines</label>
+                        <label><input type="radio" name="q2" value="b" data-score="1"> Eco-friendly materials</label>
+                        <label><input type="radio" name="q2" value="c" data-score="0"> Juice Machines</label>
+                </li>
+                <li>
+                    <p>3. How does GreenTech contribute to a greener future?</p>
+                        <label><input type="radio" name="q3" value="a" data-score="1"> By providing sustainable solutions</label>
+                        <label><input type="radio" name="q3" value="b" data-score="1"> By investing in renewable energy</label>
+                        <label><input type="radio" name="q3" value="c" data-score="1"> Both A and B</label>
+                </li>
+                <li>
+                    <p>4. What is the mission statement of GreenTech?</p>
+                        <label><input type="radio" name="q4" value="a" data-score="1"> To empower businesses through sustainable innovation and eco-friendly technology</label>
+                        <label><input type="radio" name="q4" value="b" data-score="1"> To create a sustainable future for all</label>
+                        <label><input type="radio" name="q4" value="c" data-score="0"> To reduce waste and promote recycling</label>
+                </li>   
+                <li>
+                    <p>5. Which of the following best describes GreenTech's approach to sustainability?</p>
+                        <label><input type="radio" name="q5" value="a" data-score="1"> A holistic approach that integrates environmental, social, and economic factors</label>
+                        <label><input type="radio" name="q5" value="b" data-score="0"> A focus on reducing carbon emissions</label>
+                        <label><input type="radio" name="q5" value="c" data-score="0"> A commitment to using renewable energy sources</label>
+                </li>
+                <li>
+                    <p>6. How does GreenTech's software suite help businesses reduce their ecological footprint?</p>
+                        <label><input type="radio" name="q6" value="a" data-score="1"> By providing real-time sustainability analytics and environmental monitoring</label>
+                        <label><input type="radio" name="q6" value="b" data-score="1"> By optimizing resource use and reducing waste</label>
+                        <label><input type="radio" name="q6" value="c" data-score="1"> Both A and B</label>
+                </li>
+                <li>
+                    <p>7. What is the environmental impact of GreenTech's solar-powered irrigation system?</p>
+                        <label><input type="radio" name="q7" value="a" data-score="1"> It reduces water waste by 30% and increases crop yields by 20%</label>
+                        <label><input type="radio" name="q7" value="b" data-score="0"> It promotes carbon emissions by 25%</label>
+                        <label><input type="radio" name="q7" value="c" data-score="0"> It promotes a circular economy</label>
+                </li>
+                <li>
+                    <p>8. How does GreenTech's eco-friendly packaging contribute to sustainability?</p>
+                        <label><input type="radio" name="q8" value="a" data-score="0"> It is biodegradable and compostable, replacing single-use plastics</label>
+                        <label><input type="radio" name="q8" value="b" data-score="0"> It reduces plastic waste in landfills and oceans</label>
+                        <label><input type="radio" name="q8" value="c" data-score="1"> Both A and B</label>
+                </li>
+                <li>
+                    <p>9. What industries does GreenTech serve with its sustainable solutions?</p>
+                        <label><input type="radio" name="q9" value="a" data-score="1"> Agriculture, manufacturing, and energy</label>
+                        <label><input type="radio" name="q9" value="b" data-score="0"> Technology and finance</label>
+                        <label><input type="radio" name="q9" value="c" data-score="0"> Healthcare and education</label>
+                </li>
+                <li>
+                    <p>10. What is the overall impact of GreenTech's innovations on the environment?</p>
+                        <label><input type="radio" name="q10" value="a" data-score="1"> They help reduce carbon emissions, promote sustainable practices, and contribute to a greener future</label>
+                        <label><input type="radio" name="q10" value="b" data-score="0"> They primarily focus on reducing waste and promoting recycling</label>
+                        <label><input type="radio" name="q10" value="c" data-score="0"> They mainly aim to optimize resource use and reduce costs for businesses</label>
+                </li>
+            </ol>
+            <button type="submit" class="submit-button">Submit Quiz. Find out your Eco Score</button>
+        </form>
+    </section>
+</main>
+<script src="../java/mainscript.js"></script>
 </body>
 </html>

@@ -57,4 +57,29 @@ searchInput.addEventListener('input', function() {
     });
 }
 );
-
+//Quiz functionality//
+document.addEventListener('DOMContentLoaded', function() {
+    const quizForm = document.getElementById('quiz-form');
+    quizForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let totalscore = 0;
+        const questions = quizForm.querySelectorAll('input[type="radio"]:checked');
+        if (questions.length < 10) {
+                        alert ("You must answer all the seeds of knowledge to find out your eco score! Please answer all the questions before submitting the quiz.");
+            return;
+        }
+        questions.forEach(function (input) {
+            totalscore += parseInt(input.dataset.score);
+        });
+        const percentage = (totalscore / 10) * 100;
+        let resultMessage = 'Thank you for taking the quiz! Your Eco Score is: ' + percentage + '%.\n';
+        if (percentage >= 80) {
+            resultMessage += 'Excellent! Your roots of knowledge are strong, and you are well on your way to becoming an eco-warrior! Congratulations on being a sustainable superstar!';
+        } else if (percentage >= 50) {
+            resultMessage += 'Good job! You are eco-conscious and have a solid understanding of sustainability. Keep nurturing your knowledge and growing your eco-friendly habits!';
+        } else {
+            resultMessage += 'Keep learning! Your eco score indicates that there is room for growth in your sustainability knowledge. Keep watering your roots of knowledge and watch your eco-awareness bloom!';
+        }
+        alert(resultMessage);
+    });
+    
