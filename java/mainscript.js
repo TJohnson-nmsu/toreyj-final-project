@@ -112,8 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextRoundBtn = document.getElementById('nextRound');
     const roundDisplay = document.getElementById('round');
     const gameMessage = document.getElementById('gameMessage');
-    let curentRound = 1;
-    const nextRound = 6;
+    const flowersA = document.getElementById('flowersA');
+    const flowersB = document.getElementById('flowersB');
+    let currentRound = 1;
+    const maxRound = 6;
     //Need to add flowers when the roof is clicked. VS code was nice and fixed some of the errors that appeared as I was trying to make this game. I did have a past prject when you had to fins donuts so I am trying to apply that conecept.//
     function plantFlower(roof) {
         const flower = document.createElement('div');
@@ -121,6 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
         flower.style.left = Math.random() * 80 + 10 + '%';
         flower.style.top = Math.random() * 80 + 10 + '%';
         roof.appendChild(flower);
+        if (roof.id === 'roofA') {
+            flowersA.textContent = roof.childElementCount;
+        } else {
+            flowersB.textContent = roof.childElementCount;
+        }
     }  
     roofA.addEventListener('click', () => {
         plantFlower(roofA);
@@ -131,13 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
         gameMessage.textContent = 'You planted a flower on Roof B! Keep going!';
     });
     nextRoundBtn.addEventListener('click', () => {
-        if (curentRound < maxRound) {
-            curentRound++;
-            roundDisplay.textContent = `Round ${curentRound} started! Plant more flowers to win!`;
+        if (currentRound < maxRound) {
+            currentRound++;
+            roundDisplay.textContent = currentRound;
+            gameMessage.textContent = `Round ${currentRound} started! Plant more flowers to win!`;
         } else {
             gameMessage.textContent = 'Congratulations! You have completed all rounds and helped the garden bloom!';
             nextRoundBtn.disabled = true;
         }
     }); 
-    roundDisplay.textContent = `Round ${curentRound} started! Plant more flowers to win!`;
+    roundDisplay.textContent = currentRound;
 });
