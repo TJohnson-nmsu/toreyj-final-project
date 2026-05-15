@@ -52,11 +52,22 @@ searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const cards = document.querySelectorAll('.product-card');
     cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
+        const text = card.querySelector('h3').textContent.toLowerCase();
         card.style.display = text.includes(query) ? 'block' : 'none';
+    }); 
+} );
+//Comparison table sorting//    
+function filterProducts(category) {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+        if (category === 'Whole Greenhouse' || card.dataset.category === category)   {
+            card.style.display = 'flex';
+        } else {
+            const cardCategory = card.getAttribute('data-category');
+            card.style.display = (cardCategory === category) ? 'flex' : 'none';
+        }
     });
 }
-);
 //Quiz functionality//
 document.addEventListener('DOMContentLoaded', function() {
     const quizForm = document.getElementById('quizForm');
@@ -93,4 +104,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         resultDiv.textContent = resultMessage;
     });
+});
+//Rootop Garden Game//
+document.addEventListener('DOMContentLoaded', () => {
+    const roofA = document.getElementById('roofA');
+    const roofB = document.getElementById('roofB');
+    const nextRoundBtn = document.getElementById('nextRound');
+    const roundDisplay = document.getElementById('round');
+    const gameMessage = document.getElementById('gameMessage');
+    let curentRound = 1;
+    const nextRound = 6;
+    //Need to add flowers when the roof is clicked. VS code was nice and fixed some of the errors that appeared as I was trying to make this game. I did have a past prject when you had to fins donuts so I am trying to apply that conecept.//
+    function plantFlower(roof) {
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.left = Math.random() * 80 + 10 + '%';
+        flower.style.top = Math.random() * 80 + 10 + '%';
+        roof.appendChild(flower);
+    }  
+    roofA.addEventListener('click', () => {
+        plantFlower(roofA);
+        gameMessage.textContent = 'You planted a flower on Roof A! Keep going!';
+    });
+    roofB.addEventListener('click', () => {
+        plantFlower(roofB);
+        gameMessage.textContent = 'You planted a flower on Roof B! Keep going!';
+    });
+    nextRoundBtn.addEventListener('click', () => {
+        if (curentRound < maxRound) {
+            curentRound++;
+            roundDisplay.textContent = `Round ${curentRound} started! Plant more flowers to win!`;
+        } else {
+            gameMessage.textContent = 'Congratulations! You have completed all rounds and helped the garden bloom!';
+            nextRoundBtn.disabled = true;
+        }
+    }); 
+    roundDisplay.textContent = `Round ${curentRound} started! Plant more flowers to win!`;
 });
