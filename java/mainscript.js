@@ -35,4 +35,26 @@ function displayImpactStatistics() {
         );
     }
 }
+//Filter products by category//
+function filterProducts(category) {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+        if (category === 'All' || card.dataset.category === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+//Search Products//
+const searchInput = document.querySelector('.search-input')
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+    });
+}
+);
 

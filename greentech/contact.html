@@ -11,7 +11,7 @@
     <header class="top-banner">
         <h1>GreenTech Contact Page</h1>
             <nav>
-                    <ul>
+                <ul>
                     <li><a href="../index.html">Home Page</a></li>
                     <li><a href="../greentech/about.html">About Us</a></li>
                     <li><a href="../greentech/product.html">Products & Services</a></li>
@@ -20,9 +20,27 @@
                 </ul>
             </nav>
     </header>
-    <!--Continue after the nav, push first-->
+<!--Continue after the nav, push first-->
     <main>
-        <h1 class="centered-title">Hey There! Let's Grow Together, by staying in touch!</h1>
+        <section class="contact-intro">
+            <h2 class="contact-title">Hey There! Let's Grow Together, by staying in touch!</h2>
+                <p class="centered-paragraph">At GreenTech, we believe that collaboration and communication are key to cultivating a sustainable future. Whether you're interested in learning more about our products, have questions about our sustainability initiatives, or simply want to connect with us, we're here to listen and grow together.</p>
+                <p>We'd love to hear from you! Whether you have questions about our products, want to learn more about our sustainability initiatives, or just want to say hello, feel free to reach out to us.</p>
+        </section>
+                <section class="contact-form-section">
+                    <div class="contact-form-container">
+                        <form id="contactForm">
+                            <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required placeholder="Sow your thoughts here...please enter your name">
+                            <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Plant your digital address here...enter your email address" required>
+                            <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="8" placeholder="Sow your thoughts here....type your message here"></textarea>
+                            <button type="submit" class="submit-button" placeholder="Grow the Conversation....send Message">Send Message</button>
+                        </form>
+                        <p id="formMessage" style="display:none; color:lightgreen; margin-top: 10px;">Thank you for reaching out! We'll get back to you soon.</p>
+                    </div>
+                </section>
     </main>
 </body>
 </html>
