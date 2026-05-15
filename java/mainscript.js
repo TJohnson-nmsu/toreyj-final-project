@@ -149,3 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }); 
     roundDisplay.textContent = currentRound;
 });
+//Animation for the impact statistics section//
+document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-number');
+    CountQueuingStrategy.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            let count = +counter.innerText;
+            const increment = Math.ceil(target / 200); 
+            if (count < target) {
+                counter.innerText = count + increment;
+                setTimeout(updateCount, 20);
+            }
+        };         updateCount();
+    }   
+    )   ;
+});

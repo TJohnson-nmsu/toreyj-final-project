@@ -7,6 +7,25 @@ body {
     background-color: #0a543b;
     color: white
 }
+/*home page centering*/
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+.center-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.center-content p {
+    font-size: 1.2em;
+    max-width: 600px;
+}
+
 /* eco-innovation-table styles */
 .top-banner {
     background-color: #946e6ef1;
