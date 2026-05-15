@@ -36,8 +36,8 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.75rem;
-    border-bottom: 3px solid var(--green-light)
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4))
+    border-bottom: 3px solid var(--green-light);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 .top-banner h1 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -420,7 +420,7 @@ letter-spacing: 0.5px;
 }
 @media (max-width: 700px)
 {
-    .buildings {grid-template-colums:1fr;
+    .buildings {grid-template-columns:1fr;
     }
 }
 /*Seperate building cards copied from old layout*/
