@@ -23,7 +23,49 @@
     </header>
     <!--Continue after the nav, push first-->
     <main>
-        <h1 class="centered-title">Welcome to the GreenTech Harvest Hub!</h1>
+        <section class="product-intro">
+            <h1 class="centered-title">Welcome to the GreenTech Harvest Hub!</h1>
+            <p class="subtitle">
+               Welcome to our marketplace of innovative eco-solutions, where we are dedicated to cultivating a wide variety of sustainable products and services aimed at ensuring a greener future for our planet. Our carefully curated offerings encompass advanced technologies and practices that support environmental stewardship across global markets.Among our key products, we feature state-of-the-art solar-powered irrigation systems designed to conserve water while maximizing agricultural productivity. These systems leverage renewable energy to empower farmers, helping them reduce their carbon footprint while enhancing crop yields.In addition, we provide biodegradable packaging options that offer environmentally friendly alternatives to traditional materials. Our packaging solutions are designed to decompose naturally, reducing waste and contributing to a circular economy.We also offer advanced sustainability software that helps businesses track and improve their environmental impact. This powerful tool enables organizations to monitor resource consumption, manage emissions, and implement sustainable practices effectively.To support businesses in their journey toward sustainability, we provide global consulting services. Our experienced team works closely with clients to develop tailored strategies that align with their specific needs and objectives, ensuring they achieve their sustainability goals.Join us in our mission to promote a sustainable future with innovative solutions that make a positive impact on the world around us.</p>   
+        </section>
+        <!-- Search Section -->
+        <section class="search-section">
+            <input type="text" placeholder="Search for products..." class="search-input">
+            <p>Please enter your search query above.</p>
+        </section>
+        <section class="filter-section">
+            <h2 class="centered-title">Browse by Category</h2>
+            <div class="filter-buttons">
+                <button onclick="filterProducts('Whole Greenhouse')">Whole Greenhouse</button>
+                <button onclick="filterProducts('Powerful Petal')">Powerful Petal</button>
+                <button onclick="filterProducts('De-Com-Power')">De-Com-Power</button>
+                <button onclick="filterProducts('The Glowing Leaf Node')">The Glowing Leaf Node</button>
+                <button onclick="filterProducts('Agro-Loop Advisor')">Agro-Loop Advisor</button>
+            </div>
+        </section>
+        <section class="product-grid">
+            <div class="product-card" data-category="Powerful Petal">
+                <h3>Solar-Powered Irrigation System</h3>
+                <img src="../images/istockphoto-solar panels.jpg" alt="Solar-Powered Irrigation System" class="product-image">
+                <p>Introducing an innovative irrigation system designed to harness solar energy, optimizing water usage for agricultural purposes. This advanced system significantly reduces water waste by 30%, ensuring that every drop counts. By leveraging solar power, it offers a sustainable solution that not only minimizes energy costs but also positively impacts the environment. As a result, farmers can enjoy an impressive 20% increase in crop yields, leading to enhanced productivity and profitability. This cutting-edge technology exemplifies the future of sustainable agriculture, promoting efficient resource management while supporting food security.</p>
+            </div>
+            <div class="product-card" data-category="De-Com-Power">
+                <h3>Eco-Friendly Packaging</h3>
+                <img src="../images/istockphoto-compostable.jpg" alt="Eco-Friendly Packaging" class="product-image">
+                <p>Biodegradable and compostable packaging materials are innovative alternatives specifically designed to replace single-use plastics. Unlike traditional plastics, these materials break down naturally in the environment, minimizing their impact on ecosystems. By supporting circular economy systems, they contribute to reducing overall plastic waste, thereby promoting sustainable practices. These packaging solutions not only help companies meet environmental regulations but also appeal to environmentally-conscious consumers seeking greener choices. By choosing biodegradable and compostable options, we can make significant strides toward a more sustainable future.</p>
+            </div>
+            <div class="product-card" data-category="The Glowing Leaf Node">
+                <h3>GreenTech Software Suite</h3>
+                <img src="../images/istockphoto-software.jpg" alt="GreenTech Software Suite" class="product-image">
+                <p>We offer a comprehensive global platform designed to deliver real-time sustainability analytics and environmental monitoring. This innovative tool empowers organizations to effectively optimize their resources by leveraging data-driven insights related to climate and environmental factors. With our platform, businesses can gain critical visibility into their sustainability efforts, enabling them to make informed decisions that reduce their ecological footprint and enhance overall operational efficiency.</p>
+            </div>
+            <div class="product-card" data-category="Agro-Loop Advisor">
+                <h3>Sustainable Agriculture Consulting</h3>
+                <img src="../images/istockphoto-consulting.jpg" alt="Sustainable Agriculture Consulting" class="product-image">
+                <p>Our expert consulting services are designed to guide businesses in making the transition to sustainable, low-carbon operations. We understand that each organization has unique challenges and opportunities, so we offer customized solutions to meet specific needs. Our team develops tailored global strategies that focus on reducing environmental impact over the long term. By implementing best practices in sustainability and carbon management, we empower companies to not only comply with regulations but also to enhance their overall efficiency and reputation in the market. Together, we can create a roadmap that leads to a greener future while achieving your business goals.
+            </div>
+        </section>
+        /* Add table to compare products */
     </main>
 </body>
 </html>

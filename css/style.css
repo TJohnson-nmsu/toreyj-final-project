@@ -8,6 +8,12 @@ body {
     color: white
 }
 /* eco-innovation-table styles */
+.top-banner {
+    background-color: #12512f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
 .eco-innovation-table caption {
     width: 80%;
     margin: 20px auto;
@@ -17,9 +23,64 @@ body {
 }
 .eco-innovation-table {
     border-collapse: collapse;
+    margin: 20px auto;
+    width: 80%;
 }
 .eco-innovation-table th, .eco-innovation-table td {
-    border: 1px solid #8e7070;
+    border: 1px solid #560303;
     padding: 8px;
     text-align: left;
+    background-color: burlywood;
+}
+/* About Page Us Growth in the Details Section */
+.story-section {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+.centered-paragraph {
+    max-width: 900px;
+    margin: 10px auto;
+    font-size: 1.2em;
+    line-height: 1.5;
+}   
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* Growth in the Details Section, for individual team member cards */
+.team-card {
+    background-color: #946e6ef1;
+    color: rgb(245, 239, 239);
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+/*Growth in the Details Section, for the timeline */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+}
+.timeline-list {
+    max-width: fit-content;
+    text-align: left;
+    text-decoration: wavy;
+    line-height: 2.0;
 }
