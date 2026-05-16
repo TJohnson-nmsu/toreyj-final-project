@@ -2,10 +2,11 @@
 /* Global Styles */
 body {
     font-family: 'Bookman Old Style', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0a543b;
-    color: white
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 1.5rem 1rem 0.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    color: var(--green-pale);
 }
 /*home page centering*/
 .center-content {
@@ -28,10 +29,21 @@ body {
 
 /* eco-innovation-table styles */
 .top-banner {
-    background-color: #946e6ef1;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #0a3520 0%, #1e7a47 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    border-bottom: 3px solid var(--green-light);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.top-banner h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.6rem;
+    color: var(--green-pale);
+    letter-spacing: 1px;
 }
 .eco-innovation-table caption {
     width: 80%;
@@ -274,63 +286,266 @@ body {
 .submit-button:hover {
     background-color: #ad22e9;
 }
+/* Navagation bar Adjustment*/
+na ul {
+    list-style-type: none;
+    display:flex ;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+nav ul lia a {
+    color:(--cream);
+    text-decoration: wavy;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+
+}
+
 /*GardenGreenhouse Game Styles*/
+/* Restarted the css to see if that makes the game interactive, copy and pasted some of hwat i previously had written*/
+*, *::before, *::after {
+    box-sizing: border-box; margin:0; padding: 0; 
+}
+:root {
+    --green-dark: #12512f;
+    --green-mid: #1e7a47;
+    --green-light:#2ecc71;
+    --green-pale:#a8f0c6;
+    --soil: #5c3d1e;
+    --soil-light:#7a5230;
+    --cream:#fdf9f0;
+    --gold: #f5c842;
+    --text-dark:#1a2e1a;
+    --radius: 15 px;
+    --shadow: 0 4px 20 px rgba(0,0,0,0,0.25)
+
+
+}
+body {
+    background-color: var(--green-dark);
+    color: var(--cream);
+    font-family: 'Times New Roman', sans-serif;
+    min-height: 100vh;
+}
+/*Garden set up, moved over from previous css*/
 #garden-game {
-    padding: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-    font-family: Bookman Old Style, Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1100px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem;
 }
-.buildings {
+#garden-game > h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.9rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.5 rem;
+}
+#garden-game > p{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--green-pale);
+    max-width: 700 px;
+    margin: 0 auto 0.6rem;
+    line-height: 1.6;
+}
+/* label*/ 
+.season-label {
+text-align: center;
+font-size: 1rem;
+font-weight: 700;
+color: var(--gold);
+margin: 0.25rem 0 1.25rem;
+letter-spacing: 0.5px;
+}
+/*Plant Options*/
+.selector-panel{
+    background:linear-gardient (135deg, #0f3d22, #1a5e35);
+    border: 2px solid var(green-mid);
+    border-radius:var(--radius);
+    padding: 1 rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow:var(--shadow);
+}
+.selector-panel h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    color:var(--green-pale);
+    margin-bottom: 0.75rem;
+}
+#plantSelector {
     display: flex;
-    gap: 20px;
-    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
-.building {
-    flex: 1;
+.plant-btn {
+    background: var(--soil);
+    border: 2px solid var(--soil-light);
+    border-radius: 10px;
+    padding: 0.45rem 0.75rem;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
+    transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    color: var(--cream);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.roof {
-    background-color: blue;
-    height: 200px;
-    width: 300px;
-    margin-top: 10px;
-    position: relative;
-    border-radius: 5px;
+.plant-btn:hover{
+    transform: translateY(-3px) scale(1.06);
+    border-color:var(--green-light);
+    background: var(--soil--lihgt)
+}
+.plant-btn.selected {
+    border-color: var(--gold);
+    background: #3a2200;
+    box-shadow: 0 0 0 3px rgba(245, 200, 66, 0.35);
+}
+.plant-emoji{
+    font-size: 1.6rem; line-height: 1;
+}
+.plant-label {
+    font-size: 0.65rem; font-weight:700;
+    color: var (--green-pale); text-align:center;
+}
+/*Building layout copied from previous codef rom last night*/
+.buildings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 700px)
+{
+    .buildings {grid-template-columns:1fr;
+    }
+}
+/*Seperate building cards copied from old layout*/
+.building {
+  background: linear-gradient(160deg, #0f3d22 0%, #163e27 100%);
+  border: 2px solid var(--green-mid);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.building h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+}
+/*Flower counter brought over from deleted css*/
+.flower-count {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.65rem;
+}
+.flower-count span{
+    color:var(--gold);
+
+    }
+.flower-count span{
+    color: var(--gold);
+    font-size: 1.05rem;
+}
+/* Roof details copied and adjusted from last css*/
+.roof-grid {
+  display: grid;
+  border: 2px solid var(--green-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.6s ease;
+}
+.roof-title{
+    aspect-ratio: 1;
+    background: #1a4a2a;
+    border: 1px solid #2a6040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor:pointer;
+    transition: background 0.15s, transform 01s;
+    user-select: none;
+    position:relative;
+}
+/*add roof titles for the flowers to go*/
+.roof-title:hover{
+    background: #255c35;
+    z-index: 1;
+}
+.roof-title.planted{
+    background: #1e5c35;
+}
+.roof-title.pop {
+    animation: pop 0.3s ease forwards;
+}
+/*Add plants to roof*/
+@keyframes pop {
+    0% {transfrom:scale(0.5); opacity:0.5}
+    60%  { transform: scale(1.25); }
+     100% { transform: scale(1);   opacity: 1; }
+}
+/*Game controls*/
+.round-controls{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+.round-info{
+    font-size: 1rem;
+    font-weight: 700;
+    color:var(--green-pale);
+}
+.round-info span {
+    color:var(--gold);
+    font-size:1.15rem;
+}
+/*copied for next round commands from previous css*/
+#nextRound{
+    background: var(--green-light);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 24px;
+    padding: 0.6rem 1.6rem;
+    font-family:'Times New Roman', cursive;
+    font-size: 1rem;
     cursor: pointer;
-    overflow: hidden;
-    border: 2px solid #e82828;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
-.flower {
-    width: 30px;
-    height: 30px;
-    background-color: rgb(115, 8, 222);
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    border: 2px solid #e82828;
-    border-style: groove;
+#nextRound:hover{
+    background:var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(245,200,66,0.45)
 }
-#gameMessage {
+#nextRound:active { transform: translateY(0)}
+/*present game message*/
+#gameMessage{
     text-align: center;
-    font-size: 1.5em;
-    margin-top: 20px;
-    font-weight: bold;
-    color: rgb(13, 1, 1);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green-pale);
+    min-height: 1.4rem;
+    padding: 0 1rem;
 }
-#round{
-    font-weight: bold;
-    color: rgb(6, 106, 11);
+/*end of game*/
+@keyframes confettiFal{
+    0% {transform: translateY(-60px) rotate(0deg); opacity: 1;}
+    100% {transfrom: translateY(100vh) rotate(720deg); opacity:0;}
 }
-#garden-game button {
-    padding: 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    font-family: Old Bookman, Tahoma, Geneva, Verdana, sans-serif;
-    background-color: dark green;
-    border-radius: 12;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.confetti-piece {
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confettiFall linear forwards;
 }

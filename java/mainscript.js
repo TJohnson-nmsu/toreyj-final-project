@@ -114,41 +114,98 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameMessage = document.getElementById('gameMessage');
     const flowersA = document.getElementById('flowersA');
     const flowersB = document.getElementById('flowersB');
+    const seasonLabel = document.querySelector('.season-label')
+    //Rounds for the games//
     let currentRound = 1;
     const maxRound = 6;
     //Need to add flowers when the roof is clicked. VS code was nice and fixed some of the errors that appeared as I was trying to make this game. I did have a past prject when you had to fins donuts so I am trying to apply that conecept.//
-    function plantFlower(roof) {
+    const seasons = [
+        'Spring',
+        'Summer',
+        'Fall',
+        "Winter",
+    ]
+    const flowerEmojis = [
+        '🌻', '🌹', '🌷', '🌼', '🌸', '🌿', '🌵', '🍄'];
+        
+    
+    function plantFlower(roof, countSpan) {
         const flower = document.createElement('div');
         flower.classList.add('flower');
-        flower.style.left = Math.random() * 80 + 10 + '%';
-        flower.style.top = Math.random() * 80 + 10 + '%';
-        roof.appendChild(flower);
-        if (roof.id === 'roofA') {
-            flowersA.textContent = roof.childElementCount;
-        } else {
-            flowersB.textContent = roof.childElementCount;
-        }
+        flower.textContent = flowerEmojis [Math.floor(Math.random()* flowerEmojis.length)]
     }  
-    roofA.addEventListener('click', () => {
-        plantFlower(roofA);
-        gameMessage.textContent = 'You planted a flower on Roof A! Keep going!';
-    });
-    roofB.addEventListener('click', () => {
-        plantFlower(roofB);
-        gameMessage.textContent = 'You planted a flower on Roof B! Keep going!';
-    });
-    nextRoundBtn.addEventListener('click', () => {
+    //Redmoved orginal list and update with css names//
+    flower.style.position = 'absolute';
+    flower.style.left = Math.random () * 80 + 10 + '%';
+    flower.style.top = Math.random () * 80 + 10 + '%';
+    flower.style.fontsize = '1.6rem';
+    flower.style.cursor = 'default';
+    flower.styles.lineHeight = '1'
+    flower.styles.userSelect = 'none';
+    flower.styles.animation = 'pop 0.3s ease forwards';
+    roof.appendChild(flower);
+    //Add counter for flowers//
+    count.countSpan.textContent = roof.childElementCount;
+
+roofA.style.position = 'relative';
+roofB.style.position = 'relative';
+
+roofA.addEventListener('click', () =>{
+    plantFlower(roofA, flowersA);
+    gameMessage.textContent = 'You Planted A Flower On Roof A! Keep Going!';
+});
+roofB.addEventListener('click', () =>{
+    plantFlower(roofB, flowersB);
+    gameMessage.textContent = 'You Planted A Flower On Roof B! Keep Going!';
+});
+//Copied over the next round button from previous scripte//
+nextRoundBtn.addEventListener('click', () => {
         if (currentRound < maxRound) {
             currentRound++;
-            roundDisplay.textContent = currentRound;
-            gameMessage.textContent = `Round ${currentRound} started! Plant more flowers to win!`;
+            roundDisplay.textContent  = currentRound;
+            seasonLabel.textContent   = 'Season: ' +seasons[currentRound - 1];
+            gameMessage.textContent = 'Round ${currentRound} started! Plant more flowers!' ;
         } else {
-            gameMessage.textContent = 'Congratulations! You have completed all rounds and helped the garden bloom!';
-            nextRoundBtn.disabled = true;
+            const total = roofA.childElementCount + roofB.childElementCount;
+            gameMessage.textContent   = 'Congratulations! You planted a total of ${total} flowers and hekoed the garden bloom!';
+            nextRoundBtn.textContent  ='Play Again!'
+            nextRoundBtn.removeEventListener('click', arguements.callee);
+            nextRoundBtn.addEventListener('click', resetGame, { once: true });
+            launchConfetti();
         }
-    }); 
-    roundDisplay.textContent = currentRound;
-});
+    });
+    //Reset the game//
+    function resetGame () {
+        currentRound.textContent = 1;
+        roundDisplay.textContent  = 1;
+        seasonLabel.textContent ='Season: Spring Time!';
+        gameMessage.textContent = 'Garden Reset! Lets start planting.';
+        flowersA.textContent      = '0';
+        flowersB.textContent      = '0';
+        roofA.innerHTML= '';
+        roofB.innerHTML= '';
+        nextRoundBtn.textContent  = 'Next Round →';
+        nextRoundBtn.disabled     = false;
+
+    }
+// Confetti signals gameover//
+function launchConfetti (){
+    const emojis = [
+        '🌻', '🌹', '🌷', '🌼', '🌸', '🌿', '🌵', '🍄'];
+        for (let i=0; i<40;i++){
+            const el = document.createElement ('div');
+            el.className ='confetti-piece';
+            el.textContent = emojis[Math.floor(Math.random ()* emojis.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDuration = (2.5 + Math.random () * 2) + 's';
+            el.style.animationDelay =(Math.random() * 1.5) + 's';
+            el.style.fontSize = (1 + Math.random ()* 1.5) + 's';
+            document.body.appendChild(el);
+            el.addEventListener('animation',() => el.remove());
+        }
+}
+roundDisplay.Display.textContent = currentRound;
+gameMessage.textContent = 'Click a rooftop to plant you first flower';
 //Animation for the impact statistics section//
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-number');
