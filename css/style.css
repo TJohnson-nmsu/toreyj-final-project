@@ -287,14 +287,14 @@ body {
     background-color: #ad22e9;
 }
 /* Navagation bar Adjustment*/
-na ul {
+nav ul {
     list-style-type: none;
     display:flex ;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
-nav ul lia a {
-    color:(--cream);
+nav ul li a {
+    color: var(--cream);
     text-decoration: wavy;
     font-size: 0.85rem;
     font-weight: 600;
@@ -319,8 +319,8 @@ nav ul lia a {
     --cream:#fdf9f0;
     --gold: #f5c842;
     --text-dark:#1a2e1a;
-    --radius: 15 px;
-    --shadow: 0 4px 20 px rgba(0,0,0,0,0.25)
+    --radius: 15px;
+    --shadow: 0 4px 20 px rgba(0,0,0,0.25)
 
 
 }
@@ -362,10 +362,10 @@ letter-spacing: 0.5px;
 }
 /*Plant Options*/
 .selector-panel{
-    background:linear-gardient (135deg, #0f3d22, #1a5e35);
-    border: 2px solid var(green-mid);
+    background:linear-gradient (135deg, #0f3d22, #1a5e35);
+    border: 2px solid var(--green-mid);
     border-radius:var(--radius);
-    padding: 1 rem 1.25rem;
+    padding: 1rem 1.25rem;
     margin-bottom: 1.5rem;
     box-shadow:var(--shadow);
 }
@@ -397,7 +397,7 @@ letter-spacing: 0.5px;
 .plant-btn:hover{
     transform: translateY(-3px) scale(1.06);
     border-color:var(--green-light);
-    background: var(--soil--lihgt)
+    background: var(--soil-light)
 }
 .plant-btn.selected {
     border-color: var(--gold);
@@ -409,7 +409,7 @@ letter-spacing: 0.5px;
 }
 .plant-label {
     font-size: 0.65rem; font-weight:700;
-    color: var (--green-pale); text-align:center;
+    color: var(--green-pale); text-align:center;
 }
 /*Building layout copied from previous codef rom last night*/
 .buildings {
@@ -455,10 +455,14 @@ letter-spacing: 0.5px;
 /* Roof details copied and adjusted from last css*/
 .roof-grid {
   display: grid;
+  min-height: 180px;
+  background: #1a4a2a;
   border: 2px solid var(--green-light);
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
   transition: border-color 0.6s ease;
+  margin-top: 0.5rem;
 }
 .roof-title{
     aspect-ratio: 1;
@@ -486,7 +490,7 @@ letter-spacing: 0.5px;
 }
 /*Add plants to roof*/
 @keyframes pop {
-    0% {transfrom:scale(0.5); opacity:0.5}
+    0% {transform:scale(0.5); opacity:0.5}
     60%  { transform: scale(1.25); }
      100% { transform: scale(1);   opacity: 1; }
 }
@@ -538,9 +542,9 @@ letter-spacing: 0.5px;
     padding: 0 1rem;
 }
 /*end of game*/
-@keyframes confettiFal{
+@keyframes confettiFall{
     0% {transform: translateY(-60px) rotate(0deg); opacity: 1;}
-    100% {transfrom: translateY(100vh) rotate(720deg); opacity:0;}
+    100% {transform: translateY(100vh) rotate(720deg); opacity:0;}
 }
 .confetti-piece {
     position: fixed;
