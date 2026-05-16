@@ -136,20 +136,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const flower = document.createElement('div');
         flower.classList.add('flower');
         flower.textContent = flowerEmojis [Math.floor(Math.random()* flowerEmojis.length)]
-    }  
+     
     //Redmoved orginal list and update with css names//
     flower.style.position = 'absolute';
     flower.style.left = Math.random () * 80 + 10 + '%';
     flower.style.top = Math.random () * 80 + 10 + '%';
-    flower.style.fontsize = '1.6rem';
+    flower.style.fontSize = '1.6rem';
     flower.style.cursor = 'default';
-    flower.styles.lineHeight = '1'
-    flower.styles.userSelect = 'none';
-    flower.styles.animation = 'pop 0.3s ease forwards';
+    flower.style.lineHeight = '1'
+    flower.style.userSelect = 'none';
+    flower.style.animation = 'pop 0.3s ease forwards';
     roof.appendChild(flower);
     //Add counter for flowers//
-    count.countSpan.textContent = roof.childElementCount;
-
+    countSpan.textContent = roof.childElementCount;
+    }
 roofA.style.position = 'relative';
 roofB.style.position = 'relative';
 
