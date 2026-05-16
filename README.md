@@ -18,6 +18,7 @@ Went through and updated the folder structure to ensure that all pages are organ
 
 /##Added for Project Requirements##\
 Live Site Link:
+https://tjohnson-nmsu.github.io/toreyj-final-project/
 
 Repositorey Link:
 *https://github.com/TJohnson-nmsu/toreyj-final-project.git
