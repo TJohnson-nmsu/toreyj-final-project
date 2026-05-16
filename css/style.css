@@ -553,3 +553,25 @@ letter-spacing: 0.5px;
     z-index: 9999;
     animation: confettiFall linear forwards;
 }
+/*Article  Box*/
+.article.box{
+    background-color: peru;
+    border: 1px solid var(--green-mid);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 2;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.article.box h2 {
+    border-bottom: 2px solid var(--green-light);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+    color: var(--gold)
+}
+.article-box p{
+ margin-bottom: 1rem;
+ font-size: 0.95rem;
+ color: var(--cream)
+}
