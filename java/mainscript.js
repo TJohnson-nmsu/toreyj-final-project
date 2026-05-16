@@ -225,4 +225,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCount();    
     });
 });
-
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (!contactForm || !formMessage)return;
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formMessage.style.display = 'block';
+        contactForm.reset();
+    });
+});
