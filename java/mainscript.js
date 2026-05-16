@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seasonLabel = document.querySelector('.season-label')
     //Rounds for the games//
     let currentRound = 1;
-    const maxRound = 6;
+    const maxRound = 2;
     //Need to add flowers when the roof is clicked. VS code was nice and fixed some of the errors that appeared as I was trying to make this game. I did have a past prject when you had to fins donuts so I am trying to apply that conecept.//
     const seasons = [
         'Spring',
@@ -167,7 +167,7 @@ nextRoundBtn.addEventListener('click', () => {
             currentRound++;
             roundDisplay.textContent  = currentRound;
             seasonLabel.textContent   = 'Season: ' +seasons[currentRound - 1];
-            gameMessage.textContent = `Round: ${currentRound} 'started! Plant more flowers!` ;
+            gameMessage.textContent = `Round: ${currentRound} started! Plant more flowers!` ;
         } else {
             const total = roofA.childElementCount + roofB.childElementCount;
             gameMessage.textContent   = `Congratulations! You planted a total of ${total} flowers and hekoed the garden bloom!`;
