@@ -48,7 +48,7 @@ function filterProducts(category) {
 }
 //Search Products//
 const searchInput = document.querySelector('.search-input')
-if (search-input){
+if (searchInput){
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const cards = document.querySelectorAll('.product-card');
@@ -167,19 +167,18 @@ nextRoundBtn.addEventListener('click', () => {
             currentRound++;
             roundDisplay.textContent  = currentRound;
             seasonLabel.textContent   = 'Season: ' +seasons[currentRound - 1];
-            gameMessage.textContent = 'Round ${currentRound} started! Plant more flowers!' ;
+            gameMessage.textContent = `Round: ${currentRound} 'started! Plant more flowers!` ;
         } else {
             const total = roofA.childElementCount + roofB.childElementCount;
-            gameMessage.textContent   = 'Congratulations! You planted a total of ${total} flowers and hekoed the garden bloom!';
+            gameMessage.textContent   = `Congratulations! You planted a total of ${total} flowers and hekoed the garden bloom!`;
             nextRoundBtn.textContent  ='Play Again!'
-            nextRoundBtn.removeEventListener('click', arguements.callee);
             nextRoundBtn.addEventListener('click', resetGame, { once: true });
             launchConfetti();
         }
     });
     //Reset the game//
     function resetGame () {
-        currentRound.textContent = 1;
+        currentRound = 1;
         roundDisplay.textContent  = 1;
         seasonLabel.textContent ='Season: Spring Time!';
         gameMessage.textContent = 'Garden Reset! Lets start planting.';
@@ -188,7 +187,6 @@ nextRoundBtn.addEventListener('click', () => {
         roofA.innerHTML= '';
         roofB.innerHTML= '';
         nextRoundBtn.textContent  = 'Next Round →';
-        nextRoundBtn.disabled     = false;
 
     }
 // Confetti signals gameover//
@@ -202,19 +200,19 @@ function launchConfetti (){
             el.style.left = Math.random() * 100 + 'vw';
             el.style.animationDuration = (2.5 + Math.random () * 2) + 's';
             el.style.animationDelay =(Math.random() * 1.5) + 's';
-            el.style.fontSize = (1 + Math.random ()* 1.5) + 's';
+            el.style.fontSize = (1 + Math.random ()* 1.5) + 'rem';
             document.body.appendChild(el);
-            el.addEventListener('animation',() => el.remove());
+            el.addEventListener('animationend',() => el.remove());
         }
 }
-roundDisplay.Display.textContent = currentRound;
+roundDisplay.textContent = currentRound;
 gameMessage.textContent = 'Click a rooftop to plant you first flower';
 });
 
 //Animation for the impact statistics section//
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-number');
-    CountQueuingStrategy.forEach(counter => {
+    stats.forEach(counter => {
         const updateCount = () => {
             const target = +counter.getAttribute('data-target');
             let count = +counter.innerText;
