@@ -7,6 +7,7 @@
     <title>Welcome to the GreenTech Harvest Hub!</title>
         <subtitle>Discover our marketplace of innovation saplings</subtitle>
     <link rel="stylesheet" href="../css/style.css"> 
+    <script src="../java/mainscript.js"></script>
 </head>
 <body style="background-color: #12512f; color: white;" >
     <header class="top-banner">
@@ -34,12 +35,12 @@
         </section>
         <section class="filter-section">
             <h2 class="centered-title">Browse by Category</h2>
-            <div class="filter-buttons">
-                <button onclick="filterProducts('Whole Greenhouse')">Whole Greenhouse</button>
-                <button onclick="filterProducts('Powerful Petal')">Powerful Petal</button>
-                <button onclick="filterProducts('De-Com-Power')">De-Com-Power</button>
-                <button onclick="filterProducts('The Glowing Leaf Node')">The Glowing Leaf Node</button>
-                <button onclick="filterProducts('Agro-Loop Advisor')">Agro-Loop Advisor</button>
+            <div class="filter-button-group">
+                <button class="filter-buttons" onclick="filterProducts('Whole Greenhouse')"></button>
+                <button class="filter-buttons" onclick="filterProducts('Powerful Petal')"></button>
+                <button class="filter-buttons" onclick="filterProducts('De-Com-Power')"></button>
+                <button class="filter-buttons" onclick="filterProducts('The Glowing Leaf Node')"></button>
+                <button class="filter-buttons" onclick="filterProducts('Agro-Loop Advisor')"></button>
             </div>
         </section>
         <section class="product-grid">
@@ -61,7 +62,7 @@
             <div class="product-card" data-category="Agro-Loop Advisor">
                 <h3>Sustainable Agriculture Consulting</h3>
                 <img src="../images/istockphoto-consulting.jpg" alt="Sustainable Agriculture Consulting" class="product-image">
-                <p>Our expert consulting services are designed to guide businesses in making the transition to sustainable, low-carbon operations. We understand that each organization has unique challenges and opportunities, so we offer customized solutions to meet specific needs. Our team develops tailored global strategies that focus on reducing environmental impact over the long term. By implementing best practices in sustainability and carbon management, we empower companies to not only comply with regulations but also to enhance their overall efficiency and reputation in the market. Together, we can create a roadmap that leads to a greener future while achieving your business goals.
+                <p>Our expert consulting services are designed to guide businesses in making the transition to sustainable, low-carbon operations. We understand that each organization has unique challenges and opportunities, so we offer customized solutions to meet specific needs. Our team develops tailored global strategies that focus on reducing environmental impact over the long term. By implementing best practices in sustainability and carbon management, we empower companies to not only comply with regulations but also to enhance their overall efficiency and reputation in the market. Together, we can create a roadmap that leads to a greener future while achieving your business goals.</p>
             </div>
         </section>
         <!-- Add table to compare products -->
