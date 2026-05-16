@@ -48,6 +48,7 @@ function filterProducts(category) {
 }
 //Search Products//
 const searchInput = document.querySelector('.search-input')
+if (search-input){
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const cards = document.querySelectorAll('.product-card');
@@ -56,6 +57,7 @@ searchInput.addEventListener('input', function() {
         card.style.display = text.includes(query) ? 'block' : 'none';
     }); 
 } );
+}
 //Comparison table sorting//    
 function filterProducts(category) {
     const cards = document.querySelectorAll('.product-card');
@@ -71,6 +73,7 @@ function filterProducts(category) {
 //Quiz functionality//
 document.addEventListener('DOMContentLoaded', function() {
     const quizForm = document.getElementById('quizForm');
+    if (!quizForm) return; 
     quizForm.addEventListener('submit', function(e) {
         e.preventDefault();
         let totalscore = 0;
@@ -206,6 +209,8 @@ function launchConfetti (){
 }
 roundDisplay.Display.textContent = currentRound;
 gameMessage.textContent = 'Click a rooftop to plant you first flower';
+});
+
 //Animation for the impact statistics section//
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-number');
@@ -218,7 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 counter.innerText = count + increment;
                 setTimeout(updateCount, 20);
             }
-        };         updateCount();
-    }   
-    )   ;
+        };
+        updateCount();    
+    });
 });
+
